@@ -1,0 +1,25 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#rectangle {
+  height: 100vh;
+  width: 350px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#dialog {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+}
