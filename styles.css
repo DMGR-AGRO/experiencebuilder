@@ -10,6 +10,9 @@ body, html {
   background-color: lightgray;
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .item {
@@ -18,8 +21,25 @@ body, html {
 }
 
 #dialog {
+  max-width: 300px;  /* Ajusta esto según el tamaño necesario */
+  padding: 10px;
+  border: 1px solid #ccc;
+
+
+
   display: none;
   position: absolute;
   background-color: white;
-  padding: 10px;
+
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  word-wrap: break-word;
+  white-space: pre-wrap; /* This will handle newline characters */
+  overflow: auto; /* Adds a scrollbar if the content is too large */
+  max-height: calc(100% - 20px); /* Adds a max height to prevent overflow */
+}
+
+#dialog.small {
+  font-size: 12px; /* Smaller font size */
 }
