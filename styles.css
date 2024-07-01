@@ -38,6 +38,8 @@ body, html {
   white-space: pre-wrap; /* This will handle newline characters */
   overflow: auto; /* Adds a scrollbar if the content is too large */
   max-height: calc(100% - 20px); /* Adds a max height to prevent overflow */
+
+  font-size: 12px;
 }
 
 #dialog.small {
