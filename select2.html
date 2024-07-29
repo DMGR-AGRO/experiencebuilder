@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa interactivo</title>
+    <style>
+        #mapa {
+            position: relative;
+        }
+
+        .punto-ubicacion {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: yellow;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapa">
+        <img src="mapaR1.png" alt="Mapa">
+        <div class="punto-ubicacion" style="top: 85px; left: 273px;"></div> <!-- Baja California -->
+        <div class="punto-ubicacion" style="top: 280px; left: 560px;"></div> <!-- Comarca -->
+        <div class="punto-ubicacion" style="top: 280px; left: 670px;"></div> <!-- Nuevo Leon -->
+        <div class="punto-ubicacion" style="top: 420px; left: 660px;"></div> <!-- Queretaro -->
+        <div class="punto-ubicacion" style="top: 470px; left: 683px;"></div> <!-- Morelos -->
+        <div class="punto-ubicacion" style="top: 470px; left: 910px;"></div> <!-- Campeche -->
+        
+    </div>
+
+    <script>
+        document.querySelectorAll('.punto-ubicacion').forEach((punto, index) => {
+            const enlaces = [
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=400d174c2bfa42c28c86b2c137312a24',
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=5e2eced6b5ab46a2a01736308eecbb46',
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=f99f6b4b4f9445f5901763b26d826669',
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=3f98e0a1c3804606ad4efb7a02c14b46',
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=d8e2c7bbcdb749519c3650abdd3fe7f0',
+                'https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=18ab8fe536a94310bea0f403196a2863',
+                'http://enlace7.com',
+                'http://enlace8.com',
+                'http://enlace9.com',
+                'http://enlace10.com',
+                'http://enlace11.com',
+                'http://enlace12.com',
+                'http://enlace13.com',
+                'http://enlace14.com',
+                'http://enlace15.com',
+                'http://enlace16.com',
+                'http://enlace17.com',
+                'http://enlace18.com',
+                'http://enlace19.com',
+                'http://enlace20.com'
+            ];
+            
+            punto.addEventListener('click', () => {
+                window.location.href = enlaces[index] || 'https://arcgisweb.agroasemex.gob.mx/portal/apps/sites/#/colaboracion-geoespacial', '_blank';
+            });
+        });
+    </script>
+</body>
+</html>
