@@ -1,0 +1,184 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'noto sans';
+}
+button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+   
+    text-align: center;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+   
+}
+
+table th {
+    background-color: #5a5a5a;
+   
+}
+
+table tr:nth-child(even) {
+    background-color: #f0f0f0;
+    
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+#rectangle {
+  height: 100vh;
+  width: 350px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.item .icon {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(255, 255, 255); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid rgb(151, 150, 150)
+}
+
+.item .icon2 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(195, 207, 255); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.item .icon3 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(160, 161, 254); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon4 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(137, 255, 254); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon5 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(134, 249, 154); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon6 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(254, 255, 63); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon7 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(255, 204, 63); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon8 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(254, 153, 63); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon9 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(254, 65, 63); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon10 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(200, 22, 20); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon11 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(127, 22, 20); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+.item .icon12 {
+  width: 10px; /* O 20px si prefieres forma de rectángulo */
+  height: 10px; /* O igual, 10px si es rectángulo */
+  background-color: rgb(61, 65, 64); /* O blue para rectángulo */
+  border-radius: 50%; /* Elimina esto si prefieres un rectángulo */
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+/* Estilos para el Diálogo (Tooltip Lateral) */
+#dialog {
+    /* Esencial para el posicionamiento relativo a la ventana visible */
+    position: fixed; 
+    
+    /* Oculto por defecto, se muestra con JS */
+    display: none; 
+    
+    /* Estilos de la caja */
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    z-index: 1000; 
+    
+    /* Opcional: Asegurar que el tamaño se ajuste al contenido */
+    max-width: 150px; 
+    white-space: normal; /* Permite saltos de línea */
+}
+
+/* Nota: El resto de estilos para .item, .container, etc. se mantiene igual que antes. */
