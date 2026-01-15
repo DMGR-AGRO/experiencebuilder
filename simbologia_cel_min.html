@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simbología Panel</title>
+    <style>
+        @import url('https://db.onlinewebfonts.com/c/0441b7983178030081001b1559755432?family=Avenir+Next');
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #0B0B0B; /* Fondo de la página para contraste */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .simbologia-panel {
+            width: 310px;
+            height: 438px;
+            background-color: #0B0B0B; /* Fondo negro sólido de la imagen */
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: 'Avenir Next', sans-serif;
+            color: #ffffff;
+            border-radius: 8px; /* Un ligero borde redondeado para un aspecto moderno */
+        }
+
+        h1 {
+            text-align: center;
+            margin: 15px 0 30px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 5px 0;
+        }
+
+        .color-box {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Colores Específicos y Borde Amarillo */
+        .maiz { background-color: #8F920D; border: 2px solid #fcfc08; }
+        .frijol { background-color: #785632; border: 2px solid #cf9753; }
+        .sorgo { background-color: #738747; border: 2px solid #c8e06e; }
+        .fruta-citrica { background-color: #9C6812; border: 2px solid #f5a300; }
+        .celda-activada { background-color: #0C3580;  }
+
+        .item-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nota {
+            font-size: 12px;
+            line-height: 1.4;
+            margin-top: 40px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="simbologia-panel">
+        <h1>SIMBOLOGÍA</h1>
+        <ul>
+            <li>
+                <div class="color-box maiz"></div>
+                <span class="item-name">MAÍZ</span>
+            </li>
+            <li>
+                <div class="color-box frijol"></div>
+                <span class="item-name">FRIJOL</span>
+            </li>
+            <li>
+                <div class="color-box sorgo"></div>
+                <span class="item-name">SORGO</span>
+            </li>
+            <li>
+                <div class="color-box fruta-citrica"></div>
+                <span class="item-name">FRUTA CITRICA</span>
+            </li>
+            <li>
+                <div class="color-box celda-activada"></div>
+                <span class="item-name">CELDA ACTIVADA</span>
+            </li>
+        </ul>
+        <p class="nota">NOTA: La celda activada tendrá el contorno al tipo de cultivo correspondiente</p>
+    </div>
+
+</body>
+</html>
