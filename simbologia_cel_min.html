@@ -9,32 +9,32 @@
 
         body {
             margin: 0;
-            padding: 20px;
-            background-color: #0B0B0B; /* Fondo de la página para contraste */
+            padding: 0; /* Eliminamos el padding para que pegue arriba */
+            background-color: #0B0B0B;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Alinea al inicio (arriba) */
             min-height: 100vh;
         }
 
         .simbologia-panel {
             width: 310px;
             height: 438px;
-            background-color: #0B0B0B; /* Fondo negro sólido de la imagen */
+            background-color: #0B0B0B;
             padding: 20px;
             box-sizing: border-box;
             font-family: 'Avenir Next', sans-serif;
             color: #ffffff;
-            border-radius: 8px; /* Un ligero borde redondeado para un aspecto moderno */
+            /* border-radius: 8px; opcional: quitar si quieres esquinas rectas arriba */
         }
 
         h1 {
             text-align: center;
-            margin: 15px 0 30px;
+            margin: 0 0 30px 0; /* Cambiado a 0 el margen superior */
             font-weight: bold;
             font-size: 24px;
+            padding-top: 10px; /* Ajusta esto si quieres un pequeño respiro */
         }
-
         ul {
             list-style-type: none;
             padding: 0;
@@ -107,3 +107,4 @@
 </body>
 
 </html>
+
