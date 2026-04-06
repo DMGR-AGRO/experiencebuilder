@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Monitoreo de Siniestros</title>
+    <style>
+        /* Reset básico para eliminar márgenes del navegador */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Evita el scroll doble */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Fondo oscuro profesional */
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Barra de navegación opcional para identidad institucional */
+        .header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            height: 50px;
+        }
+
+        .header h1 {
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Estilo del iframe para que sea responsivo */
+        .experience-wrapper {
+            flex-grow: 1; /* Ocupa todo el espacio restante */
+            position: relative;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Soporte para dispositivos móviles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <h1>Visor de Siniestros Patrimoniales</h1>
+        </header>
+
+        <div class="experience-wrapper">
+            <iframe 
+                src="https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=49571a7db44c4c1ab0bee21bcbb783fd" 
+                title="Experience Builder - Siniestros Agroasemex"
+                allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+</body>
+</html>
