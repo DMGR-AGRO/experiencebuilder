@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Plataforma de Siniestros</title>
+    <style>
+        :root {
+            --primary-color: #0078d4;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-white: #e0e0e0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow: hidden;
+        }
+
+        /* --- Estilos del Login --- */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+
+        .login-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .login-card h2 {
+            margin-bottom: 25px;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #005a9e;
+        }
+
+        #error-msg {
+            color: #ff5f5f;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            display: none;
+        }
+
+        /* --- Estilos del Contenedor del Mapa --- */
+        #app-content {
+            display: none; /* Oculto hasta el login */
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #1a1a1a;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            height: 60px;
+        }
+
+        .header h1 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid #555;
+            color: #ccc;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .logout-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .experience-wrapper {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-overlay">
+        <div class="login-card">
+            <h2>Siniestros GIS</h2>
+            <div class="input-group">
+                <label>Usuario</label>
+                <input type="text" id="username" placeholder="Ingrese su usuario">
+            </div>
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+            <button class="login-btn" onclick="validateLogin()">Iniciar Sesión</button>
+            <p id="error-msg">Credenciales incorrectas. Intente de nuevo.</p>
+        </div>
+    </div>
+
+    <div id="app-content">
+        <header class="header">
+            <h1>Panel de Control Patrimonial</h1>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </header>
+        <div class="experience-wrapper">
+            <iframe id="map-frame" src="" title="Experience Builder"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const EXPERIENCE_URL = "https://arcgisweb.agroasemex.gob.mx/portal/apps/experiencebuilder/experience/?id=975d95beab0a4dddab8ad8745e32dee9";
+
+        function validateLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('error-msg');
+
+            // --- NOTA: Esto es una validación básica de ejemplo ---
+            // En un entorno real, aquí harías una petición fetch() a un servidor.
+            if (user === "fovissste_danos" && pass === "aPc4gr0pa") {
+                
+                // 1. Ocultar login
+                document.getElementById('login-overlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('login-overlay').style.visibility = 'hidden';
+                    document.getElementById('app-content').style.display = 'flex';
+                    
+                    // 2. Cargar el iframe solo tras el éxito
+                    document.getElementById('map-frame').src = EXPERIENCE_URL;
+                }, 500);
+
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        function logout() {
+            // Reiniciar estado
+            document.getElementById('map-frame').src = "";
+            document.getElementById('app-content').style.display = 'none';
+            document.getElementById('login-overlay').style.visibility = 'visible';
+            document.getElementById('login-overlay').style.opacity = '1';
+            document.getElementById('username').value = "";
+            document.getElementById('password').value = "";
+            document.getElementById('error-msg').style.display = 'none';
+        }
+
+        // Permitir login al presionar Enter
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                validateLogin();
+            }
+        });
+    </script>
+</body>
+</html>
